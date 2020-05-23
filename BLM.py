@@ -175,7 +175,7 @@ text.write("Sending $%s to %s..."%(str(totalCoinValue),qrcontent),size=15)
 # Transfer Satoshi(s)
 ssh.load_system_host_keys()
 node_ip_address = '' # Replace this with the I.P. address of your Bitcoin Node
-node_password = '' # Replace this with the password for your Mode
+node_password = '' # Replace this with the password for your Node
 ssh.connect(node_ip_address, 22, 'admin', node_password)
 stdin, stdout, stderr = ssh.exec_command("lncli payinvoice --pay_req=%s --amt=%s --fee_limit=1000 --force"%(qrcontent, str(satoshi)))
 time.sleep(10.5)
